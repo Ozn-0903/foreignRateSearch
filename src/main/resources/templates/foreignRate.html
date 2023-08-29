@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xml:lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>外幣匯率</title>
+  <style>
+    .header-text {
+        background-color: grey;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header with date -->
+<p class="header-text">資料日期: <span th:text="${date}"></span></p>
+
+<!-- Table for exchange rates -->
+<table border="1">
+  <thead>
+  <tr>
+    <th>賣出幣別</th>
+    <th>買入幣別</th>
+    <th>匯率</th>
+    <th>期待匯率上限</th>
+    <th>期待匯率下限</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="rate : ${rates}">
+    <td th:text="${rate.sellCurrency}"></td>
+    <td th:text="${rate.buyCurrency}"></td>
+    <td th:text="${rate.exchangeRate}"></td>
+    <td th:text="${rate.expectedUpperLimit}"></td>
+    <td th:text="${rate.expectedLowerLimit}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- Save Button -->
+<button onclick="save()">儲存</button>
+
+<script>
+  function save(){
+
+  }
+</script>
+</body>
+</html>

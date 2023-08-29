@@ -24,10 +24,11 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-    compileOnly("org.projectlombok:lombok")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-    annotationProcessor("org.projectlombok:lombok")
+    implementation("org.springframework.boot:spring-boot-starter-aop")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
 }
 
 tasks.withType<Test> {
